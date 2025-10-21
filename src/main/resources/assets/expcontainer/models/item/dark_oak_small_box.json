@@ -1,0 +1,14 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "top": "expcontainer:block/dark_oak_small_box_deactive",
+        "bottom": "expcontainer:block/dark_oak_small_box_bottom",
+        "side": "expcontainer:block/dark_oak_small_box_side"
+    },
+  "overrides": [
+    {
+      "predicate": { "custom_model_data": 1 },
+      "model": "expcontainer:block/dark_oak_small_box_active"
+    }
+  ]
+}

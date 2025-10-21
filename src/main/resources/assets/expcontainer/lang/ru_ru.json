@@ -1,0 +1,17 @@
+{
+    "block.expcontainer.oak_small_box": "Дубовое хранилище опыта",
+    "block.expcontainer.spruce_small_box": "Еловое хранилище опыта",
+    "block.expcontainer.birch_small_box": "Березовое хранилище опыта",
+    "block.expcontainer.acacia_small_box": "Акациевое хранилище опыта",
+    "block.expcontainer.crimson_small_box": "Багровое хранилище опыта",
+    "block.expcontainer.warped_small_box": "Искажённое хранилище опыта",
+    "block.expcontainer.jungle_small_box": "Тропическое хранилище опыта",
+    "block.expcontainer.dark_oak_small_box": "Тёмно-Дубовое хранилище опыта",
+
+    "tooltip.expcontainer.empty": "Пустая",
+    "tooltip.expcontainer.has_xp": "",
+
+    "message.expcontainer.full_barrel": "Бочка заполнена! (%s ур.)",
+    "message.expcontainer.added": "Добавлено: %s опыта (%s ур.)",
+    "message.expcontainer.stored": "В бочке: %s опыта (%s ур.)"
+}

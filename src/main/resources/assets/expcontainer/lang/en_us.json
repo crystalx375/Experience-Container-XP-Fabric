@@ -1,0 +1,18 @@
+{
+    "itemgroup.expcontainer": "Experience Box Group",
+    "block.expcontainer.oak_small_box": "Oak Experience Box",
+    "block.expcontainer.birch_small_box": "Birch Experience Box",
+    "block.expcontainer.spruce_small_box": "Spruce Experience Box",
+    "block.expcontainer.jungle_small_box": "Jungle Experience Box",
+    "block.expcontainer.acacia_small_box": "Acacia Experience Box",
+    "block.expcontainer.warped_small_box": "Warped Experience Box",
+    "block.expcontainer.crimson_small_box": "Crimson Experience Box",
+    "block.expcontainer.dark_oak_small_box": "Dark Oak Experience Box",
+
+    "tooltip.expcontainer.empty": "Empty",
+    "tooltip.expcontainer.has_xp": "",
+
+    "message.expcontainer.full_barrel": "The barrel is full! (max level %s)",
+    "message.expcontainer.added": "Added %s experience (%s level)",
+    "message.expcontainer.stored": "Stored: %s experience (%s level)"
+}

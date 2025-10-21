@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PSP",
+        "PBP",
+        "PSP"
+    ],
+    "key": {
+        "P": {
+            "item": "minecraft:spruce_planks"
+        },
+        "S": {
+            "item": "minecraft:spruce_slab"
+        },
+        "B": {
+            "item": "minecraft:experience_bottle"
+        }
+    },
+    "result": {
+        "item": "expcontainer:spruce_small_box",
+        "count": 1
+    }
+}

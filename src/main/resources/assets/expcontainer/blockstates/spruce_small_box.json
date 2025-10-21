@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "active=false,facing=down": { "model": "expcontainer:block/spruce_small_box_deactive", "x": 180 },
+    "active=false,facing=up": { "model": "expcontainer:block/spruce_small_box_deactive" },
+    "active=false,facing=north": { "model": "expcontainer:block/spruce_small_box_deactive", "x": 90 },
+    "active=false,facing=south": { "model": "expcontainer:block/spruce_small_box_deactive", "x": 90, "y": 180 },
+    "active=false,facing=west": { "model": "expcontainer:block/spruce_small_box_deactive", "x": 90, "y": 270 },
+    "active=false,facing=east": { "model": "expcontainer:block/spruce_small_box_deactive", "x": 90, "y": 90 },
+
+    "active=true,facing=down": { "model": "expcontainer:block/spruce_small_box_active", "x": 180 },
+    "active=true,facing=up": { "model": "expcontainer:block/spruce_small_box_active" },
+    "active=true,facing=north": { "model": "expcontainer:block/spruce_small_box_active", "x": 90 },
+    "active=true,facing=south": { "model": "expcontainer:block/spruce_small_box_active", "x": 90, "y": 180 },
+    "active=true,facing=west": { "model": "expcontainer:block/spruce_small_box_active", "x": 90, "y": 270 },
+    "active=true,facing=east": { "model": "expcontainer:block/spruce_small_box_active", "x": 90, "y": 90 }
+  }
+}

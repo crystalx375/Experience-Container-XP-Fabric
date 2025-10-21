@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "expcontainer",
+	"version": "${version}",
+	"name": "Experience Container [XP]",
+	"description": "...",
+	"authors": [
+		"§dCrystal"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/project/experience-container-xp-fabric/",
+		"sources": ""
+	},
+	"license": "GPLv3",
+	"icon": "icon.gif",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "expcontainer.Experience_Container"
+		],
+		"client": [
+			"expcontainer.ExamplemodClient"
+		],
+		"fabric-datagen": [
+			"expcontainer.ExamplemodDataGenerator"
+		]
+	},
+	"mixins": [
+		"example-mod.mixins.json",
+		{
+			"config": "example-mod.client.mixins.json",
+			"environment": "*"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": ">=1.19 <=1.21.6",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

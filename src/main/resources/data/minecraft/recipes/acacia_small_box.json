@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PSP",
+        "PBP",
+        "PSP"
+    ],
+    "key": {
+        "P": {
+            "item": "minecraft:acacia_planks"
+        },
+        "S": {
+            "item": "minecraft:acacia_slab"
+        },
+        "B": {
+            "item": "minecraft:experience_bottle"
+        }
+    },
+    "result": {
+        "item": "expcontainer:acacia_small_box",
+        "count": 1
+    }
+}

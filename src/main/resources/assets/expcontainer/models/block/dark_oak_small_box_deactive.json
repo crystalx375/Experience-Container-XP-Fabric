@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "expcontainer:block/dark_oak_small_box_bottom",
+        "top": "expcontainer:block/dark_oak_small_box_deactive",
+        "side": "expcontainer:block/dark_oak_small_box_side"
+    }
+}
