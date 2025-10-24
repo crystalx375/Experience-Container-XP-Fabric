@@ -11,7 +11,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.Registries;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -54,7 +56,7 @@ public class ModBlocks {
                     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
                         int xp = 0;
                         if (stack.hasNbt() && stack.getSubNbt("BlockEntityTag") != null) {
-                            xp = stack.getSubNbt("BlockEntityTag").getShort("StoredXp");
+                            xp = stack.getSubNbt("BlockEntityTag").getInt("StoredXp");
                         }
 
                         int level = expcontainer.block.ExperienceContainerBlock.getLevelFromExperience(xp);
@@ -64,15 +66,15 @@ public class ModBlocks {
                         StringBuilder bar = new StringBuilder();
 
                         for (int i = 0; i < 10; i++) {
-                            bar.append(i < filledBars ? "█" : "░");
+                            bar.append(i < filledBars ? "░" : ".");
                         }
-
                         if (xp > 0) {
-                            tooltip.add(Text.translatable("tooltip.expcontainer.has_xp", xp, level));
-                            tooltip.add(Text.literal("§a[" + bar + "] " + (int)(fillPercent * 100) + "%"));
+                            MutableText coloredLevel = Text.literal(String.valueOf(level))
+                                    .formatted(Formatting.YELLOW);
+                            tooltip.add(Text.translatable("tooltip.expcontainer.has_xp", coloredLevel));
+                            tooltip.add(Text.literal( "§a[" + bar + "] " + (int)(fillPercent * 100) + "§a%"));
                         } else {
                             tooltip.add(Text.translatable("tooltip.expcontainer.empty"));
-                            tooltip.add(Text.literal("§7[░░░░░░░░░░] 0%"));
                         }
 
                         super.appendTooltip(stack, world, tooltip, context);

@@ -9,10 +9,11 @@
     "block.expcontainer.crimson_small_box": "Crimson Experience Box",
     "block.expcontainer.dark_oak_small_box": "Dark Oak Experience Box",
 
-    "tooltip.expcontainer.empty": "Empty",
-    "tooltip.expcontainer.has_xp": "",
+    "tooltip.expcontainer.empty": "§8Empty",
+    "tooltip.expcontainer.has_xp": "§eLevels: %s",
 
-    "message.expcontainer.full_barrel": "The barrel is full! (max level %s)",
-    "message.expcontainer.added": "Added %s experience (%s level)",
-    "message.expcontainer.stored": "Stored: %s experience (%s level)"
+    "message.expcontainer.full_barrel": "§cThe barrel is full! %s",
+    "message.expcontainer.max_level": "(max level %s)",
+    "message.expcontainer.added": "§bAdded: %s §aexperience §e(%s §elevel)",
+    "message.expcontainer.stored": "§aStored: %s §aexperience §e(%s §elevel)"
 }

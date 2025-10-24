@@ -3,13 +3,13 @@
 	"id": "expcontainer",
 	"version": "${version}",
 	"name": "Experience Container [XP]",
-	"description": "...",
+	"description": "",
 	"authors": [
-		"§dCrystal"
+		"Crystal"
 	],
 	"contact": {
 		"homepage": "https://modrinth.com/project/experience-container-xp-fabric/",
-		"sources": ""
+		"sources": "https://github.com/crystalx375/Experience-Container-XP-Fabric"
 	},
 	"license": "GPLv3",
 	"icon": "icon.gif",
@@ -34,7 +34,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.10",
-		"minecraft": ">=1.19 <=1.21.6",
+		"minecraft": ">=1.20 <=1.20.4",
 		"java": ">=17",
 		"fabric-api": "*"
 	},

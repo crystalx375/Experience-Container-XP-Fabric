@@ -8,10 +8,10 @@
     "block.expcontainer.jungle_small_box": "Тропическое хранилище опыта",
     "block.expcontainer.dark_oak_small_box": "Тёмно-Дубовое хранилище опыта",
 
-    "tooltip.expcontainer.empty": "Пустая",
-    "tooltip.expcontainer.has_xp": "",
+    "tooltip.expcontainer.empty": "§8Пустая",
+    "tooltip.expcontainer.has_xp": "§6Уровни: %s",
 
-    "message.expcontainer.full_barrel": "Бочка заполнена! (%s ур.)",
-    "message.expcontainer.added": "Добавлено: %s опыта (%s ур.)",
-    "message.expcontainer.stored": "В бочке: %s опыта (%s ур.)"
+    "message.expcontainer.full_barrel": "§сБочка заполнена! (%s ур.)",
+    "message.expcontainer.added": "§aДобавлено: %s опыта (%s ур.)",
+    "message.expcontainer.stored": "§bВ бочке: %s опыта (%s ур.)"
 }

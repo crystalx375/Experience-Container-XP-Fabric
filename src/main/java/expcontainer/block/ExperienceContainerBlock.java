@@ -19,8 +19,10 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -34,6 +36,11 @@ public class ExperienceContainerBlock extends BlockWithEntity {
 
     public static final BooleanProperty ACTIVE = BooleanProperty.of("active");
     public static DirectionProperty FACING = Properties.FACING;
+    final int maxXp = 1628;
+    final float factor = 0.9f; // loss 10%
+
+
+
     public ExperienceContainerBlock(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState()
@@ -83,34 +90,36 @@ public class ExperienceContainerBlock extends BlockWithEntity {
         }
         int storedXp = xpBe.getStoredXp();
         if (hasSilkTouch) {
-            if (hasSilkTouch) {
-                if (storedXp > 0) {
-                    NbtCompound nbt = new NbtCompound();
-                    xpBe.writeNbt(nbt);
 
-                    nbt.remove("x");
-                    nbt.remove("y");
-                    nbt.remove("z");
+            if (storedXp > 0) {
+                NbtCompound nbt = new NbtCompound();
+                xpBe.writeNbt(nbt);
 
-                    ItemStack dropStackItem = new ItemStack(this);
-                    dropStackItem.setSubNbt("BlockEntityTag", nbt);
+                nbt.remove("x");
+                nbt.remove("y");
+                nbt.remove("z");
 
-                    dropStackItem.getOrCreateNbt().putInt("CustomModelData", 1);
-                    dropStackItem.getOrCreateNbt().putBoolean("Active", true);
+                ItemStack dropStackItem = new ItemStack(this);
+                dropStackItem.setSubNbt("BlockEntityTag", nbt);
 
-                    dropStack(world, pos, dropStackItem);
-                } else {
-                    dropStoredXp(world, pos, storedXp);
-                    ItemStack empty = new ItemStack(this);
-                    empty.getOrCreateNbt().putInt("CustomModelData", 0);
-                    dropStack(world, pos, empty);
-                }
-                if (storedXp < 0) {
-                    Experience_Container.LOGGER.error("Negative exp in expcontainer?");
-                }
+                dropStackItem.getOrCreateNbt().putInt("CustomModelData", 1);
+                dropStackItem.getOrCreateNbt().putBoolean("Active", true);
+
+                dropStack(world, pos, dropStackItem);
+            } else {
+                dropStoredXp(world, pos, storedXp);
+                ItemStack empty = new ItemStack(this);
+                empty.getOrCreateNbt().putInt("CustomModelData", 0);
+                dropStack(world, pos, empty);
+            }
+            if (xpBe.getStoredXp() < 0) {
+                int rewrite = xpBe.getStoredXp();
+                xpBe.addXp(rewrite * -1);
+                Experience_Container.LOGGER.error("Experience barrel exp is negative, so set barrel exp to 0");
             }
         } else {
             if (storedXp >= 0) {
+
                 dropStoredXp(world, pos, storedXp);
                 ItemStack Default = new ItemStack(this);
                 dropStack(world, pos, Default);
@@ -161,39 +170,43 @@ public class ExperienceContainerBlock extends BlockWithEntity {
         if (!world.isClient) {
             BlockEntity be = world.getBlockEntity(pos);
             if (be instanceof ExperienceContainerBlockEntity xpBe) {
-                final int maxXp = 1628;
-                final float factor = 0.97f; // loss 3%
+                int newLevel = getLevelFromExperience(xpBe.getStoredXp());
 
                 int current = xpBe.getStoredXp();
                 int spaceLeft = maxXp - current;
                 int playerXp = player.totalExperience;
-
+                if (spaceLeft < 0) {
+                    int rewrite = xpBe.getStoredXp();
+                    xpBe.addXp(rewrite * -1);
+                    Experience_Container.LOGGER.error("Negative exp in expcontainer?");
+                }
                 if (spaceLeft == 0) {
+
+                    MutableText part2 = Text.translatable("message.expcontainer.max_level", newLevel)
+                            .formatted(Formatting.YELLOW);
+                    MutableText finalMessage = Text.translatable("message.expcontainer.full_barrel", part2);
+
                     world.playSound(null, pos, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP,
                             SoundCategory.BLOCKS, 0.6f, 2.0f);
-                    player.sendMessage(Text.translatable("message.expcontainer.full_barrel", getLevelFromExperience(xpBe.getStoredXp())), true);
+                    player.sendMessage(finalMessage, true);
                     return ActionResult.SUCCESS;
                 }
-
-                int rewrite = xpBe.getStoredXp();
-                if (xpBe.getStoredXp() < 0) {
-                    xpBe.addXp(rewrite * -1);
-                    Experience_Container.LOGGER.error("Experience barrel have spaceLeft < 0 or negative, so set barrel exp to 0");
-                }
-                if(spaceLeft < 0) {
-                    xpBe.addXp(rewrite * -1);
-                    Experience_Container.LOGGER.error("Experience barrel have spaceLeft < 0 or negative, so set barrel exp to 0");
-                }
-
                 if (playerXp > 0) {
                     if (spaceLeft > 0) {
-                        int toTransfer = (int) Math.ceil(playerXp * factor);
-                        int added = Math.min(spaceLeft, toTransfer);
+                        int playerExp = (int) (playerXp * factor);
+                        int added = Math.min(spaceLeft, playerExp);
+                        int toRemove = (int) Math.ceil(added / factor);
+                        toRemove = Math.min(playerXp, toRemove);
+                        int newPlayerXp = playerXp - toRemove;
 
                         xpBe.addXp(added);
+
                         player.experienceLevel = 0;
-                        player.experienceProgress = 0f;
+                        player.experienceProgress = 0.0f;
                         player.totalExperience = 0;
+
+                        player.addExperience(newPlayerXp);
+
                         boolean active = xpBe.getStoredXp() > 0;
                         world.setBlockState(pos, state.with(ACTIVE, active), Block.NOTIFY_ALL);
 
@@ -202,17 +215,17 @@ public class ExperienceContainerBlock extends BlockWithEntity {
                                 SoundCategory.BLOCKS,
                                 0.6f,
                                 1.0f);
-
-                        int newLevel = getLevelFromExperience(xpBe.getStoredXp());
-                        player.sendMessage(Text.translatable("message.expcontainer.added", added, newLevel), true);
+                        int level = getLevelFromExperience(added);
+                        MutableText ADDED = Text.translatable("message.expcontainer.added", added, level).formatted(Formatting.WHITE);
+                        player.sendMessage(ADDED, true);
                     }
                 } else {
                     world.playSound(null, pos,
                             SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP,
                             SoundCategory.BLOCKS,
                             0.3f, 0.5f);
-                    int newLevel = getLevelFromExperience(xpBe.getStoredXp());
-                    player.sendMessage(Text.translatable("message.expcontainer.stored", xpBe.getStoredXp(), newLevel), true);
+                    MutableText STORED = Text.translatable("message.expcontainer.stored", xpBe.getStoredXp(), newLevel).formatted(Formatting.WHITE);
+                    player.sendMessage(STORED, true);
                 }
             }
         }
