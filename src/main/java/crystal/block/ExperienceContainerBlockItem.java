@@ -12,6 +12,7 @@ import net.minecraft.util.Formatting;
 import java.util.List;
 
 import static crystal.util.Barrel.MAX_XP;
+import static crystal.util.Barrel.getLevelFromExperience;
 
 public class ExperienceContainerBlockItem extends BlockItem {
 
@@ -36,10 +37,10 @@ public class ExperienceContainerBlockItem extends BlockItem {
                 tooltip.add(Text.translatable(
                         "tooltip.experience-container.has_xp",
                         Text.literal(
-                                String.valueOf(1)
+                                String.valueOf(getLevelFromExperience(xpFromBarrel))
                         ).formatted(Formatting.YELLOW)
                 ));
-                tooltip.add(Text.literal( "§a[" + bar + "] " + (int)(fillPercent * 100) + "§a%"));
+                tooltip.add(Text.literal( "§a[" + bar + "] " + (int) (fillPercent * 100) + "§a%"));
             } else {
                 tooltip.add(Text.translatable("tooltip.experience-container.empty"));
             }

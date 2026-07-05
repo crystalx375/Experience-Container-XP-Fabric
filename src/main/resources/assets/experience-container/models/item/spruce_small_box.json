@@ -8,7 +8,7 @@
   "overrides": [
     {
       "predicate": { "experience-container:active": 1 },
-      "model": "expcontainer:block/spruce_small_box_active"
+      "model": "experience-container:block/spruce_small_box_active"
     }
   ]
 }

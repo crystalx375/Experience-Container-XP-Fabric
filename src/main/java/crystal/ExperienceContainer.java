@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 public class ExperienceContainer implements ModInitializer {
 	public static final String MOD_ID = "experience-container";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final Logger LOGGER = LoggerFactory.getLogger("Experience Container");
 
 	@Override
 	public void onInitialize() {

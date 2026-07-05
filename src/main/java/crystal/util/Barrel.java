@@ -40,15 +40,16 @@ public class Barrel {
 
         if (barrelState == 1) {
             final int left = MAX_XP - xpFromBarrel;
-            final int preXpFromPlayer = (int) (xpFromPlayer * 0.95F);
-            final int added = Math.min(preXpFromPlayer, left);
+            final int preCheck = (int) Math.ceil(left / 0.95);
+            final int remove = Math.min(preCheck, xpFromPlayer);
+            final int add = (int) (remove * 0.95);
 
             player.experienceLevel = 0;
             player.experienceProgress = 0.0f;
             player.totalExperience = 0;
 
-            player.addExperience(preXpFromPlayer - added - 1);
-            data.setXp(data.getXp() + added);
+            player.addExperience(xpFromPlayer - remove);
+            data.setXp(data.getXp() + add);
             world.setBlockState(pos, state.with(ACTIVE, true), Block.NOTIFY_ALL);
 
             world.playSound(
@@ -62,8 +63,8 @@ public class Barrel {
             player.sendMessage(
                     Text.translatable(
                             "message.experience-container.added",
-                            added,
-                            getLevelFromExperience(added)
+                            add,
+                            getLevelFromExperience(add)
                     ).formatted(Formatting.WHITE),
                     true
             );
@@ -105,7 +106,7 @@ public class Barrel {
             return (int) (4.5 * level * level - 162.5 * level + 2220);
         }
     }
-    private static int getLevelFromExperience(final int xp) {
+    public static int getLevelFromExperience(final int xp) {
         int level = 0;
         while (xp >= getExperienceForLevel(level + 1)) {
             level++;
