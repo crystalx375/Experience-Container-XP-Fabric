@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "active=false,facing=down": { "model": "experience-container:block/dark_oak_small_box_deactive", "x": 180 },
+    "active=false,facing=up": { "model": "experience-container:block/dark_oak_small_box_deactive" },
+    "active=false,facing=north": { "model": "experience-container:block/dark_oak_small_box_deactive", "x": 90 },
+    "active=false,facing=south": { "model": "experience-container:block/dark_oak_small_box_deactive", "x": 90, "y": 180 },
+    "active=false,facing=west": { "model": "experience-container:block/dark_oak_small_box_deactive", "x": 90, "y": 270 },
+    "active=false,facing=east": { "model": "experience-container:block/dark_oak_small_box_deactive", "x": 90, "y": 90 },
+
+    "active=true,facing=down": { "model": "experience-container:block/dark_oak_small_box_active", "x": 180 },
+    "active=true,facing=up": { "model": "experience-container:block/dark_oak_small_box_active" },
+    "active=true,facing=north": { "model": "experience-container:block/dark_oak_small_box_active", "x": 90 },
+    "active=true,facing=south": { "model": "experience-container:block/dark_oak_small_box_active", "x": 90, "y": 180 },
+    "active=true,facing=west": { "model": "experience-container:block/dark_oak_small_box_active", "x": 90, "y": 270 },
+    "active=true,facing=east": { "model": "experience-container:block/dark_oak_small_box_active", "x": 90, "y": 90 }
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+
+    "pattern": [
+        "PSP",
+        "PBP",
+        "PSP"
+    ],
+    "key": {
+        "P": {
+            "item": "minecraft:warped_planks"
+        },
+        "S": {
+            "item": "minecraft:warped_slab"
+        },
+        "B": {
+            "item": "minecraft:experience_bottle"
+        }
+    },
+    "result": {
+        "id": "experience-container:warped_small_box",
+        "count": 1
+    }
+}

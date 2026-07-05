@@ -1,0 +1,8 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "bottom": "experience-container:block/jungle_small_box_bottom",
+        "top": "experience-container:block/jungle_small_box_active",
+        "side": "experience-container:block/jungle_small_box_side"
+    }
+}

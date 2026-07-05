@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "experience-container",
+	"version": "${version}",
+	"name": "Experience Container",
+	"description": "Adds experience barrels to the game!",
+	"authors": [
+		"Crystal"
+	],
+  "contact": {
+    "homepage": "https://modrinth.com/project/experience-container/",
+    "sources": "https://github.com/crystalx375/Experience-Container",
+    "issues": "https://github.com/crystalx375/Experience-Container/issues"
+  },
+	"license": "GPLv3",
+	"icon": "icon.gif",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"crystal.ExperienceContainer"
+		],
+		"client": [
+			"crystal.client.ExperienceContainerClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": ">=1.21 <=1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

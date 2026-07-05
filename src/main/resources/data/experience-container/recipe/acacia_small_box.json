@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+
+    "key": {
+        "P": {
+            "item": "minecraft:acacia_planks"
+        },
+        "S": {
+            "item": "minecraft:acacia_slab"
+        },
+        "B": {
+            "item": "minecraft:experience_bottle"
+        }
+    },
+    "pattern": [
+      "PSP",
+      "PBP",
+      "PSP"
+    ],
+    "result": {
+        "id": "experience-container:acacia_small_box",
+        "count": 1
+    }
+}

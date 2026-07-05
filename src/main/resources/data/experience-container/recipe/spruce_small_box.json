@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+
+    "pattern": [
+        "PSP",
+        "PBP",
+        "PSP"
+    ],
+    "key": {
+        "P": {
+            "item": "minecraft:spruce_planks"
+        },
+        "S": {
+            "item": "minecraft:spruce_slab"
+        },
+        "B": {
+            "item": "minecraft:experience_bottle"
+        }
+    },
+    "result": {
+        "id": "experience-container:spruce_small_box",
+        "count": 1
+    }
+}
