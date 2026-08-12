@@ -1,0 +1,14 @@
+{
+    "parent": "block/cube_bottom_top",
+    "textures": {
+        "top": "experience-container:block/cherry_small_box_deactive",
+        "bottom": "experience-container:block/cherry_small_box_bottom",
+        "side": "experience-container:block/cherry_small_box_side"
+    },
+  "overrides": [
+    {
+      "predicate": { "experience-container:active": 1 },
+      "model": "experience-container:block/cherry_small_box_active"
+    }
+  ]
+}

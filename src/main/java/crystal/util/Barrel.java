@@ -14,7 +14,6 @@ import net.minecraft.world.World;
 
 public class Barrel {
     public static final BooleanProperty ACTIVE = BooleanProperty.of("active");
-
     public static final int MAX_XP = 1628;
 
     public static void add(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockEntityData data) {

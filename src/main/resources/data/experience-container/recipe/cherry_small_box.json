@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+
+    "pattern": [
+        "PSP",
+        "PBP",
+        "PSP"
+    ],
+    "key": {
+        "P": {
+            "item": "minecraft:cherry_planks"
+        },
+        "S": {
+            "item": "minecraft:cherry_slab"
+        },
+        "B": {
+            "item": "minecraft:experience_bottle"
+        }
+    },
+    "result": {
+        "id": "experience-container:cherry_small_box",
+        "count": 1
+    }
+}

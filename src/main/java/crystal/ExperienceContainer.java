@@ -11,7 +11,6 @@ public class ExperienceContainer implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Loading...");
         RegisterBlockItem.init();
 	}
 }

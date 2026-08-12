@@ -14,6 +14,7 @@ public class ExperienceContainerClient implements ClientModInitializer {
 	public void onInitializeClient() {
         setBarrel(ACACIA_BARREL);
         setBarrel(BIRCH_BARREL);
+        setBarrel(CHERRY_BARREL);
         setBarrel(CRIMSON_BARREL);
         setBarrel(DARK_BARREL);
         setBarrel(JUNGLE_BARREL);

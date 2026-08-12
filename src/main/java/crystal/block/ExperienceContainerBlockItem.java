@@ -28,7 +28,7 @@ public class ExperienceContainerBlockItem extends BlockItem {
             final int xpFromBarrel = nbtComponent.copyNbt().getInt("xp");
             final float fillPercent = (float) xpFromBarrel / MAX_XP;
             final int filledBars = Math.round(fillPercent * 10);
-            StringBuilder bar = new StringBuilder();
+            final StringBuilder bar = new StringBuilder();
 
             for (int i = 0; i < 10; i++) {
                 bar.append(i < filledBars ? "░" : ".");

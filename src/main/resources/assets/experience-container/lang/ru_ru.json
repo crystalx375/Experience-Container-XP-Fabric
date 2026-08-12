@@ -1,6 +1,7 @@
 {
     "block.experience-container.oak_small_box": "Дубовое хранилище опыта",
     "block.experience-container.spruce_small_box": "Еловое хранилище опыта",
+    "block.experience-container.cherry_small_box": "Вишнёвое хранилище опыта",
     "block.experience-container.birch_small_box": "Березовое хранилище опыта",
     "block.experience-container.acacia_small_box": "Акациевое хранилище опыта",
     "block.experience-container.crimson_small_box": "Багровое хранилище опыта",
@@ -13,5 +14,7 @@
 
     "message.experience-container.full_barrel": "§сБочка заполнена! (%s ур.)",
     "message.experience-container.added": "§aДобавлено: %s опыта (%s ур.)",
-    "message.experience-container.stored": "§bВ бочке: %s опыта (%s ур.)"
+    "message.experience-container.stored": "§bВ бочке: %s опыта (%s ур.)",
+
+    "itemGroup.barrel_group": "Бочки"
 }
