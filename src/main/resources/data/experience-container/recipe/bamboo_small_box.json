@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+
+    "key": {
+        "P": {
+            "item": "minecraft:bamboo_planks"
+        },
+        "S": {
+            "item": "minecraft:bamboo_slab"
+        },
+        "B": {
+            "item": "minecraft:experience_bottle"
+        }
+    },
+    "pattern": [
+      "PSP",
+      "PBP",
+      "PSP"
+    ],
+    "result": {
+        "id": "experience-container:bamboo_small_box",
+        "count": 1
+    }
+}

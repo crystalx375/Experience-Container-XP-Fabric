@@ -1,13 +1,16 @@
 {
 	"replace" : false,
     "values" : [
-        "experience-container:oak_small_box",
-        "experience-container:birch_small_box",
-        "experience-container:spruce_small_box",
-        "experience-container:acacia_small_box",
-        "experience-container:jungle_small_box",
-        "experience-container:warped_small_box",
-        "experience-container:crimson_small_box",
-        "experience-container:dark_oak_small_box"
+      "experience-container:acacia_small_box",
+      "experience-container:bamboo_small_box",
+      "experience-container:birch_small_box",
+      "experience-container:cherry_small_box",
+      "experience-container:crimson_small_box",
+      "experience-container:dark_oak_small_box",
+      "experience-container:jungle_small_box",
+      "experience-container:mangrove_small_box",
+      "experience-container:oak_small_box",
+      "experience-container:spruce_small_box",
+      "experience-container:warped_small_box"
     ]
 }

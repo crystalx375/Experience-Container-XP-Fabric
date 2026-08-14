@@ -13,11 +13,13 @@ public class ExperienceContainerClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
         setBarrel(ACACIA_BARREL);
+        setBarrel(BAMBOO_BARREL);
         setBarrel(BIRCH_BARREL);
         setBarrel(CHERRY_BARREL);
         setBarrel(CRIMSON_BARREL);
         setBarrel(DARK_BARREL);
         setBarrel(JUNGLE_BARREL);
+        setBarrel(MANGROVE_BARREL);
         setBarrel(OAK_BARREL);
         setBarrel(SPRUCE_BARREL);
         setBarrel(WARPED_BARREL);

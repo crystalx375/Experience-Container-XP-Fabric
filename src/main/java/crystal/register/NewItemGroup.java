@@ -17,11 +17,13 @@ public class NewItemGroup {
             .displayName(Text.translatable("itemGroup.barrel_group"))
             .entries((context, entries) -> {
                 entries.add(ACACIA_BARREL);
+                entries.add(BAMBOO_BARREL);
                 entries.add(BIRCH_BARREL);
                 entries.add(CHERRY_BARREL);
                 entries.add(CRIMSON_BARREL);
                 entries.add(DARK_BARREL);
                 entries.add(JUNGLE_BARREL);
+                entries.add(MANGROVE_BARREL);
                 entries.add(OAK_BARREL);
                 entries.add(SPRUCE_BARREL);
                 entries.add(WARPED_BARREL);            })

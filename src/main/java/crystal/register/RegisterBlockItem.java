@@ -19,11 +19,13 @@ public class RegisterBlockItem {
     private static final AbstractBlock.Settings SETTINGS = Blocks.BARREL.getSettings().strength(1.0f, 50.0f);
 
     public static final Block ACACIA_BARREL = addItemBlock("acacia_small_box", new ExperienceContainerBlock(SETTINGS));
+    public static final Block BAMBOO_BARREL = addItemBlock("bamboo_small_box", new ExperienceContainerBlock(SETTINGS));
     public static final Block BIRCH_BARREL = addItemBlock("birch_small_box", new ExperienceContainerBlock(SETTINGS));
     public static final Block CHERRY_BARREL = addItemBlock("cherry_small_box", new ExperienceContainerBlock(SETTINGS));
     public static final Block CRIMSON_BARREL = addItemBlock("crimson_small_box", new ExperienceContainerBlock(SETTINGS));
     public static final Block DARK_BARREL = addItemBlock("dark_oak_small_box", new ExperienceContainerBlock(SETTINGS));
     public static final Block JUNGLE_BARREL = addItemBlock("jungle_small_box", new ExperienceContainerBlock(SETTINGS));
+    public static final Block MANGROVE_BARREL = addItemBlock("mangrove_small_box", new ExperienceContainerBlock(SETTINGS));
     public static final Block OAK_BARREL = addItemBlock("oak_small_box", new ExperienceContainerBlock(SETTINGS));
     public static final Block SPRUCE_BARREL = addItemBlock("spruce_small_box", new ExperienceContainerBlock(SETTINGS));
     public static final Block WARPED_BARREL = addItemBlock("warped_small_box", new ExperienceContainerBlock(SETTINGS));
@@ -33,11 +35,13 @@ public class RegisterBlockItem {
             Identifier.of(MOD_ID, "experience_barrels"),
             BlockEntityType.Builder.create(BlockEntityData::new,
                     ACACIA_BARREL,
+                    BAMBOO_BARREL,
                     BIRCH_BARREL,
                     CHERRY_BARREL,
                     CRIMSON_BARREL,
                     DARK_BARREL,
                     JUNGLE_BARREL,
+                    MANGROVE_BARREL,
                     OAK_BARREL,
                     SPRUCE_BARREL,
                     WARPED_BARREL
